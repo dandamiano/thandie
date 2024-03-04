@@ -12,16 +12,20 @@ const Signup = () => {
     const [succModalStatus, setSuccModalStatus] = useState(false);
     const [modalMsg, setModalMsg] = useState("");
     const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter()
 
     const handleSubmit = async (formData: FormData) => {
-        const res = await signUp({ email: email, password: password });
-        setModalMsg(res.message)
-        if (res.status) {
-            setSuccModalStatus(true)
-        } else {
-            seterrModalStatus(true)
+        const res = await signUp({ email: email, password: password, name: name });
+        console
+        if (res) {
+            setModalMsg(res.message)
+            if (res.status) {
+                setSuccModalStatus(true)
+            } else {
+                seterrModalStatus(true)
+            }
         }
 
     }
@@ -63,6 +67,30 @@ const Signup = () => {
                             {/* Form */}
                             <form action={handleSubmit} >
                                 <div className="grid gap-y-4">
+
+                                    {/* Form Group */}
+                                    <div>
+                                        <label htmlFor="name" className="block text-sm mb-2 dark:text-white">Username</label>
+                                        <div className="relative">
+                                            <input
+                                                type="text" id="name" name="name"
+                                                className="py-3 px-4 block w-full border-orange-200 rounded-lg text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none "
+                                                required aria-describedby="email-error"
+                                                onChange={(e) => {
+                                                    setName(e.target.value)
+                                                }}
+                                                value={name}
+                                            />
+                                            <div className="hidden absolute inset-y-0 end-0  items-center pointer-events-none pe-3">
+                                                <svg className="h-5 w-5 text-white" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <p className="hidden text-xs text-white mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
+                                    </div>
+                                    {/* End Form Group */}
+
                                     {/* Form Group */}
                                     <div>
                                         <label htmlFor="email" className="block text-sm mb-2 dark:text-white">Email address</label>
@@ -92,6 +120,7 @@ const Signup = () => {
                                             <label htmlFor="password" className="block text-sm mb-2 dark:text-white">Password</label>
                                             <a className="text-sm text-white decoration-2 hover:underline font-medium" href="../examples/html/recover-account.html">Forgot password?</a>
                                         </div>
+
                                         <div className="relative">
                                             <input
                                                 type="password" id="password" name="password" className="py-3 px-4 block w-full border-orange-200 rounded-lg text-sm focus:border-red-500 focus:ring-red-500 disabled:opacity-50 disabled:pointer-events-none" required aria-describedby="password-error"
@@ -106,6 +135,7 @@ const Signup = () => {
                                                 </svg>
                                             </div>
                                         </div>
+
                                         <p className="hidden text-xs text-white mt-2" id="password-error">8+ characters required</p>
                                     </div>
                                     {/* End Form Group */}

@@ -8,7 +8,6 @@ const LandingPage = () => {
         <div className="flex-col flex">
             <Hero />
             <Features />
-            <Stories />
             <Footer />
         </div>
     );

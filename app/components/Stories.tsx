@@ -18,10 +18,10 @@ const Stories = () => {
                             </div>
                         </div>
                         <div className="bg-white py-4 px-3">
-                            <h3 className="text-xs mb-2 font-medium">Des cadeaux incroyables prêts à être utilisés dans votre prochain projet</h3>
+                            <h3 className="text-xs mb-2 font-medium">Affordable coverage options for renters, drivers, and young families.</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-400">
-                                    Lorem, ipsum dolor sit amet
+                                    s your current insurance enough? Get a free quote and find out.
                                 </p>
                                 <div className="relative z-40 flex items-center gap-2">
                                     <a className="text-orange-600 hover:text-blue-500" href="">
@@ -52,10 +52,10 @@ const Stories = () => {
                             </div>
                         </div>
                         <div className="bg-white py-4 px-3">
-                            <h3 className="text-xs mb-2 font-medium">Des cadeaux incroyables prêts à être utilisés dans votre prochain projet</h3>
+                            <h3 className="text-xs mb-2 font-medium">Affordable coverage options for renters, drivers, and young families.</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-400">
-                                    Lorem, ipsum dolor sit amet
+                                    s your current insurance enough? Get a free quote and find out.
                                 </p>
                                 <div className="relative z-40 flex items-center gap-2">
                                     <a className="text-orange-600 hover:text-blue-500" href="">
@@ -85,10 +85,10 @@ const Stories = () => {
                             </div>
                         </div>
                         <div className="bg-white py-4 px-3">
-                            <h3 className="text-xs mb-2 font-medium">Des cadeaux incroyables prêts à être utilisés dans votre prochain projet</h3>
+                            <h3 className="text-xs mb-2 font-medium">Affordable coverage options for renters, drivers, and young families.</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-400">
-                                    Lorem, ipsum dolor sit amet
+                                    s your current insurance enough? Get a free quote and find out.
                                 </p>
                                 <div className="relative z-40 flex items-center gap-2">
                                     <a className="text-orange-600 hover:text-blue-500" href="">
@@ -118,10 +118,10 @@ const Stories = () => {
                             </div>
                         </div>
                         <div className="bg-white py-4 px-3">
-                            <h3 className="text-xs mb-2 font-medium">Des cadeaux incroyables prêts à être utilisés dans votre prochain projet</h3>
+                            <h3 className="text-xs mb-2 font-medium">Affordable coverage options for renters, drivers, and young families.</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-400">
-                                    Lorem, ipsum dolor sit amet
+                                    s your current insurance enough? Get a free quote and find out.
                                 </p>
                                 <div className="relative z-40 flex items-center gap-2">
                                     <a className="text-orange-600 hover:text-blue-500" href="">
@@ -151,10 +151,10 @@ const Stories = () => {
                             </div>
                         </div>
                         <div className="bg-white py-4 px-3">
-                            <h3 className="text-xs mb-2 font-medium">Des cadeaux incroyables prêts à être utilisés dans votre prochain projet</h3>
+                            <h3 className="text-xs mb-2 font-medium">Affordable coverage options for renters, drivers, and young families.</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-400">
-                                    Lorem, ipsum dolor sit amet
+                                    s your current insurance enough? Get a free quote and find out.
                                 </p>
                                 <div className="relative z-40 flex items-center gap-2">
                                     <a className="text-orange-600 hover:text-blue-500" href="">
@@ -184,10 +184,10 @@ const Stories = () => {
                             </div>
                         </div>
                         <div className="bg-white py-4 px-3">
-                            <h3 className="text-xs mb-2 font-medium">Des cadeaux incroyables prêts à être utilisés dans votre prochain projet</h3>
+                            <h3 className="text-xs mb-2 font-medium">Affordable coverage options for renters, drivers, and young families.</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-400">
-                                    Lorem, ipsum dolor sit amet
+                                    s your current insurance enough? Get a free quote and find out.
                                 </p>
                                 <div className="relative z-40 flex items-center gap-2">
                                     <a className="text-orange-600 hover:text-blue-500" href="">
@@ -217,10 +217,10 @@ const Stories = () => {
                             </div>
                         </div>
                         <div className="bg-white py-4 px-3">
-                            <h3 className="text-xs mb-2 font-medium">Des cadeaux incroyables prêts à être utilisés dans votre prochain projet</h3>
+                            <h3 className="text-xs mb-2 font-medium">Affordable coverage options for renters, drivers, and young families.</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-400">
-                                    Lorem, ipsum dolor sit amet
+                                    s your current insurance enough? Get a free quote and find out.
                                 </p>
                                 <div className="relative z-40 flex items-center gap-2">
                                     <a className="text-orange-600 hover:text-blue-500" href="">
@@ -250,10 +250,10 @@ const Stories = () => {
                             </div>
                         </div>
                         <div className="bg-white py-4 px-3">
-                            <h3 className="text-xs mb-2 font-medium">Des cadeaux incroyables prêts à être utilisés dans votre prochain projet</h3>
+                            <h3 className="text-xs mb-2 font-medium">Affordable coverage options for renters, drivers, and young families.</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-xs text-gray-400">
-                                    Lorem, ipsum dolor sit amet
+                                    s your current insurance enough? Get a free quote and find out.
                                 </p>
                                 <div className="relative z-40 flex items-center gap-2">
                                     <a className="text-orange-600 hover:text-blue-500" href="">

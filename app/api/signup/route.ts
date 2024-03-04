@@ -6,14 +6,14 @@ import bcrypt from "bcrypt";
 
 export async function POST(req: Request) {
   try {
-    const { email, password } = await req.json();
-
+    await dbConnect();
+    const { name, email, password } = await req.json();
     // Hash the password using bcrypt
     const hashedPassword = await bcrypt.hash(password, 10); // Adjust salt rounds as needed
 
-    const newUser = new User({ email, password: hashedPassword });
+    const newUser = new User({ name, email, password: hashedPassword });
+    console.log("New user => ", newUser);
 
-    await dbConnect();
     const exists = await User.findOne({ email });
     if (exists) {
       return NextResponse.json(
@@ -24,17 +24,18 @@ export async function POST(req: Request) {
         { status: 500 }
       );
     }
-    await newUser.save();
-
-    return NextResponse.json(
-      {
-        status: true,
-        message: "Your account has been created successfully!",
-      },
-      { status: 201 }
-    );
+    const user = await newUser.save();
+    if (user) {
+      return NextResponse.json(
+        {
+          status: true,
+          message: "Your account has been created successfully!",
+        },
+        { status: 201 }
+      );
+    }
   } catch (error) {
-    console.error(error);
+    console.log("Zakanika => ", error);
     return NextResponse.json({ status: false, message: "Error creating user" });
   }
 }
