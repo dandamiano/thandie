@@ -1,0 +1,11 @@
+{
+    "name": "Tiger",
+  "owner_name": "Mphatso",
+  "species": "German Sherpard",
+  "age": 2,
+  "poddy_trained": true,
+  "diet": ["fish meal","bone meal"],
+  "image_url": "/src/avatar.jpg",
+  "likes": ["fetch","Running","Freezbe"],
+  "dislikes": ["sit","Sat"]
+}
