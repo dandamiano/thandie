@@ -2,8 +2,11 @@
 import { useSession } from "next-auth/react"
 import { signOut } from "next-auth/react";
 import { getURL } from "next/dist/shared/lib/utils";
+import Link from "next/link";
 import { useState } from "react";
-import { BsDoorOpen, BsEnvelope } from "react-icons/bs"
+import { IconContext } from "react-icons";
+import { BsDoorOpen, BsPersonCircle } from "react-icons/bs"
+import { IoSpeedometerOutline } from "react-icons/io5";
 
 const links = [
     {
@@ -34,12 +37,12 @@ const Navbar = () => {
     const url = getURL();
 
     return (
-        <nav className="bg-orange-600 z-50 absolute w-full">
+        <nav className="bg-primary-600 z-50 absolute w-full">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         {/* Mobile menu button*/}
-                        <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-orange-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false"
+                        <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-primary-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false"
                             onClick={() => { setMenuState(!menuState) }}
                         >
                             <span className="absolute -inset-0.5"></span>
@@ -74,8 +77,8 @@ const Navbar = () => {
                                 {
                                     links.map(link => (
                                         link.url === url ?
-                                            <a href={link.url} className="bg-orange-500 text-white rounded-md px-3 py-2 text-sm font-medium">{link.name}</a >
-                                            : <a href={link.url} className="text-gray-50 hover:bg-orange-500 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                                            <a href={link.url} className="bg-primary-500 text-white rounded-md px-3 py-2 text-sm font-medium">{link.name}</a >
+                                            : <a href={link.url} className="text-gray-50 hover:bg-primary-500 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
                                                 {link.name}
                                             </a>
 
@@ -88,7 +91,7 @@ const Navbar = () => {
                     {/* Profile */}
                     {status === "authenticated" ?
                         (<div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                            <button type="button" className="relative rounded-full bg-orange-500 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                            <button type="button" className="relative rounded-full bg-primary-500 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                 <span className="absolute -inset-1.5"></span>
                                 <span className="sr-only">View notifications</span>
                                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -109,20 +112,30 @@ const Navbar = () => {
                                 </div>
                                 {
                                     profileState ?
-                                        <div className="flex flex-col items-center absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" >
-                                            <p className="text-sm w-11/12 overflow-hidden bg-orange-600 text-white rounded-md p-2">{session.user?.name}</p>
-                                            {/* {Active: "bg-gray-100", Not Active: ""} */}
-                                            <a href="/messages/" className="px-4 py-2 text-sm text-gray-700 flex items-center justify-between space-x-3 hover:bg-orange-500 hover:text-white rounded-md w-11/12" role="menuitem" id="user-menu-item-0">
-                                                <div className="flex space-x-4 hover:text-white">
-                                                    <BsEnvelope color={"rgb(251 146 60)"} size={20} />
-                                                    <p>Messages</p>
-                                                </div>
-                                                <span className="bg-orange-400 text-xs font-bold rounded-full w-5 h-5 p-3 text-white text-center flex items-center justify-center">12</span>
-                                            </a>
+                                        <div className="space-y-3 flex flex-col items-center absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" >
 
-                                            <button onClick={() => signOut({ callbackUrl: "/" })} className="px-4 py-2 text-sm text-gray-700 flex items-center justify-between space-x-3 hover:bg-orange-500 hover:text-white rounded-md w-11/12" role="menuitem" id="user-menu-item-0">
+                                            <div className="text-sm w-11/12 overflow-hidden bg-primary-600 text-white rounded-md px-4 py-2">
                                                 <div className="flex space-x-4 hover:text-white">
-                                                    <BsDoorOpen color={"rgb(251 146 60)"} size={20} />
+                                                    <IconContext.Provider value={{ color: "blue", className: "global-class-name hover:color-white " }}>
+                                                        <div>
+                                                            <BsPersonCircle color={"#fff"} size={20} />
+                                                        </div>
+                                                    </IconContext.Provider>
+                                                    <p>{session.user?.name}</p>
+                                                </div>
+                                            </div>
+
+                                            <Link href="/dashboard/" className="px-4 py-2 text-sm text-gray-700 flex items-center justify-between space-x-3 hover:bg-primary-500 hover:text-white rounded-md w-11/12" role="menuitem" id="user-menu-item-0">
+                                                <div className="flex space-x-4 hover:text-white">
+                                                    <IoSpeedometerOutline style={{ hover: { color: '#fff' } }} color={"#fcb93e"} size={20} />
+                                                    <p>Dashboard</p>
+                                                </div>
+                                                <span className="bg-primary-400 text-xs font-bold rounded-full w-5 h-5 p-3 text-white text-center flex items-center justify-center">12</span>
+                                            </Link>
+
+                                            <button onClick={() => signOut({ callbackUrl: "/" })} className="px-4 py-2 text-sm text-gray-700 flex items-center justify-between space-x-3 hover:bg-primary-500 hover:text-white rounded-md w-11/12" role="menuitem" id="user-menu-item-0">
+                                                <div className="flex space-x-4 hover:text-white">
+                                                    <BsDoorOpen color={"#fcb93e"} size={20} />
                                                     <p>Sign Out</p>
                                                 </div>
                                             </button>
@@ -140,11 +153,11 @@ const Navbar = () => {
                 menuState === true ?
                     <div className="sm:hidden" id="mobile-menu">
                         <div className="space-y-1 px-2 pb-3 pt-2">
-                            {/* Current: "bg-gray-900 text-white", Default: "text-gray-50 hover:bg-orange-500 hover:text-white" */}
+                            {/* Current: "bg-gray-900 text-white", Default: "text-gray-50 hover:bg-primary-500 hover:text-white" */}
                             <a href="#" className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-                            <a href="#" className="text-gray-50 hover:bg-orange-500 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-                            <a href="#" className="text-gray-50 hover:bg-orange-500 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-                            <a href="#" className="text-gray-50 hover:bg-orange-500 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+                            <a href="#" className="text-gray-50 hover:bg-primary-500 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+                            <a href="#" className="text-gray-50 hover:bg-primary-500 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+                            <a href="#" className="text-gray-50 hover:bg-primary-500 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
                         </div>
                     </div> : null
             }

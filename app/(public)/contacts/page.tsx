@@ -8,7 +8,7 @@ const Contacts = () => {
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="max-w-2xl lg:max-w-5xl mx-auto mt-20">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-orange-500 sm:text-4xl">
+          <h1 className="text-3xl font-bold text-primary-500 sm:text-4xl">
             Contact us
           </h1>
           <p className="mt-1 text-gray-600">
@@ -18,7 +18,7 @@ const Contacts = () => {
 
         <div className="mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Card */}
-          <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg bg-orange-600">
+          <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg bg-primary-600">
             <h2 className="mb-8 text-xl font-semibold text-white">
               Fill in the form
             </h2>
@@ -29,35 +29,35 @@ const Contacts = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="hs-firstname-contacts-1" className="sr-only text-white">First Name</label>
-                    <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-orange-500 focus:bg-orange-500 outline-white text-white" placeholder="First Name" />
+                    <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-primary-500 focus:bg-primary-500 outline-white text-white" placeholder="First Name" />
                   </div>
 
                   <div>
                     <label htmlFor="hs-lastname-contacts-1" className="sr-only">Last Name</label>
-                    <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-orange-500 text-white" placeholder="Last Name" />
+                    <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-primary-500 text-white" placeholder="Last Name" />
                   </div>
                 </div>
                 {/* End Grid */}
 
                 <div>
                   <label htmlFor="hs-email-contacts-1" className="sr-only">Email</label>
-                  <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" autoComplete="email" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-orange-500 text-white" placeholder="Email" />
+                  <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1" autoComplete="email" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-primary-500 text-white" placeholder="Email" />
                 </div>
 
                 <div>
                   <label htmlFor="hs-phone-number-1" className="sr-only">Phone Number</label>
-                  <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-orange-500 text-white" placeholder="Phone Number" />
+                  <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-primary-500 text-white" placeholder="Phone Number" />
                 </div>
 
                 <div>
                   <label htmlFor="hs-about-contacts-1" className="sr-only">Details</label>
-                  <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" rows={4} className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-orange-500 text-white" placeholder="Details"></textarea>
+                  <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" rows={4} className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:pointer-events-none bg-primary-500 text-white" placeholder="Details"></textarea>
                 </div>
               </div>
               {/* End Grid */}
 
               <div className="mt-4 grid">
-                <button type="submit" className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-orange-700 text-white">Send inquiry</button>
+                <button type="submit" className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary-700 text-white">Send inquiry</button>
               </div>
 
               <div className="mt-3 text-center">

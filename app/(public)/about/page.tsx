@@ -2,7 +2,7 @@ const About = () => {
     return (
         <div className=" 2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
 
-            <p className=" mt-20 mb-10 text-3xl font-bold text-orange-500  pb-2">About Us</p>
+            <p className=" mt-20 mb-10 text-3xl font-bold text-primary-500  pb-2">About Us</p>
 
             <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
                 <div className="w-full lg:w-6/12">
@@ -87,7 +87,7 @@ const About = () => {
                 <div className="w-full lg:w-6/12">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12 gap-10">
                         {/* <!-- Team Card --> */}
-                        <div className="flex p-4 shadow-md shadow-orange-500 hover:shadow-orange-600 hover:scale-105 transition-all">
+                        <div className="flex p-4 shadow-md shadow-primary-500 hover:shadow-primary-600 hover:scale-105 transition-all">
                             <div className="mr-6">
                                 <svg className="mr-6" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M18 15C20.4853 15 22.5 12.9853 22.5 10.5C22.5 8.01472 20.4853 6 18 6C15.5147 6 13.5 8.01472 13.5 10.5C13.5 12.9853 15.5147 15 18 15Z" stroke="#1F2937" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
@@ -102,7 +102,7 @@ const About = () => {
                         </div>
 
                         {/* <!-- Board Card --> */}
-                        <div className="flex p-4 shadow-md shadow-orange-500 hover:shadow-orange-600 hover:scale-105 transition-all">
+                        <div className="flex p-4 shadow-md shadow-primary-500 hover:shadow-primary-600 hover:scale-105 transition-all">
                             <div className="mr-6">
                                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10.5 10.5C12.1569 10.5 13.5 9.15685 13.5 7.5C13.5 5.84315 12.1569 4.5 10.5 4.5C8.84315 4.5 7.5 5.84315 7.5 7.5C7.5 9.15685 8.84315 10.5 10.5 10.5Z" stroke="#1F2937" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
@@ -118,7 +118,7 @@ const About = () => {
                         </div>
 
                         {/* <!-- Press Card --> */}
-                        <div className="flex p-4 shadow-md shadow-orange-500 hover:shadow-orange-600 hover:scale-105 transition-all">
+                        <div className="flex p-4 shadow-md shadow-primary-500 hover:shadow-primary-600 hover:scale-105 transition-all">
                             <div className="mr-6">
                                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M28.5 7.5H7.5C5.84315 7.5 4.5 8.84315 4.5 10.5V25.5C4.5 27.1569 5.84315 28.5 7.5 28.5H28.5C30.1569 28.5 31.5 27.1569 31.5 25.5V10.5C31.5 8.84315 30.1569 7.5 28.5 7.5Z" stroke="#1F2937" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round" />
@@ -135,21 +135,21 @@ const About = () => {
             </div>
         </div>
         //         <div className="flex flex-col w-full py-8 space-y-4cle">
-        //     <h1 className="text-center text-orange-500 text-3xl font-bold">About us</h1>
+        //     <h1 className="text-center text-primary-500 text-3xl font-bold">About us</h1>
 
         //     <div className="flex flex-shrink justify-around">
-        //         <div className="w-[30%] min-h-[70vh] shadow-md rounded-md shadow-orange-300 flex flex-col items-center space-y-6 px-2">
-        //             <p className="text-orange font-bold">Our Mission</p>
+        //         <div className="w-[30%] min-h-[70vh] shadow-md rounded-md shadow-primary-300 flex flex-col items-center space-y-6 px-2">
+        //             <p className="text-primary font-bold">Our Mission</p>
         //             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, vero eveniet possimus inventore ea minima distinctio iusto, nulla molestiae sed aliquam repudiandae adipisci asperiores enim saepe consequatur omnis! Voluptatum placeat neque labore doloremque sed pariatur? Quia modi fuga fugit minus ipsa, odio perspiciatis quis totam voluptates hic dicta laborum labore?</p>
 
         //         </div>
-        //         <div className="w-[30%] min-h-[70vh] shadow-md rounded-md shadow-orange-300 flex flex-col items-center space-y-6 px-2">
-        //             <p className="text-orange font-bold">Our Mission</p>
+        //         <div className="w-[30%] min-h-[70vh] shadow-md rounded-md shadow-primary-300 flex flex-col items-center space-y-6 px-2">
+        //             <p className="text-primary font-bold">Our Mission</p>
         //             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, vero eveniet possimus inventore ea minima distinctio iusto, nulla molestiae sed aliquam repudiandae adipisci asperiores enim saepe consequatur omnis! Voluptatum placeat neque labore doloremque sed pariatur? Quia modi fuga fugit minus ipsa, odio perspiciatis quis totam voluptates hic dicta laborum labore?</p>
 
         //         </div>
-        //         <div className="w-[30%] min-h-[70vh] shadow-md rounded-md shadow-orange-300 flex flex-col items-center space-y-6 px-2">
-        //             <p className="text-orange font-bold">Our Mission</p>
+        //         <div className="w-[30%] min-h-[70vh] shadow-md rounded-md shadow-primary-300 flex flex-col items-center space-y-6 px-2">
+        //             <p className="text-primary font-bold">Our Mission</p>
         //             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, vero eveniet possimus inventore ea minima distinctio iusto, nulla molestiae sed aliquam repudiandae adipisci asperiores enim saepe consequatur omnis! Voluptatum placeat neque labore doloremque sed pariatur? Quia modi fuga fugit minus ipsa, odio perspiciatis quis totam voluptates hic dicta laborum labore?</p>
 
         //         </div>

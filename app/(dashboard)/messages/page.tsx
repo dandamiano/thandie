@@ -1,6 +1,6 @@
 "use client"
-import { useState } from "react";
-import MessageBox from "../../components/MessageBox";
+
+import MessageBox from "@/app/components/MessageBox";
 
 const Messages = () => {
     return (

@@ -7,12 +7,16 @@ import bcrypt from "bcrypt";
 export async function POST(req: Request) {
   try {
     await dbConnect();
-    const { name, email, password } = await req.json();
+    const { name, email, password, role } = await req.json();
     // Hash the password using bcrypt
     const hashedPassword = await bcrypt.hash(password, 10); // Adjust salt rounds as needed
 
-    const newUser = new User({ name, email, password: hashedPassword });
-    console.log("New user => ", newUser);
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword,
+      role: role ? (role as string) : "user",
+    });
 
     const exists = await User.findOne({ email });
     if (exists) {

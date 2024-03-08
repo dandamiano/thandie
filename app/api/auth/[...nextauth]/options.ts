@@ -42,16 +42,16 @@ export const options: NextAuthOptions = {
         token.name = user.name;
         token.email = user.email;
         token.id = user._id;
+        token.role = user.role;
       }
-      // Console log after adding user data (optional)
-      console.log("Updated Token => ", token);
       return token;
     },
     async session({ session, token }) {
       if (token) {
         if (session.user) {
-          session.user.email = token.email;
-          session.user.name = token.name;
+          session.user.email = token.email!;
+          session.user.name = token.name!;
+          session.user.role = token.role;
         }
       }
       // Console log after potential updates (optional)
