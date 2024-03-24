@@ -28,7 +28,9 @@ export default function RootLayout({
                 {/*  body */}
                 <div className="h-full flex justify-between mt-20">
                   <SideBar />
-                  {children}
+                  <div className="w-full h-full min-h-screen py-10  px-6">
+                    {children}
+                  </div>
                 </div>
               </div>
             </div>

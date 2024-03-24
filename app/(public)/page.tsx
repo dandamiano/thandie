@@ -1,8 +1,8 @@
 import Features from "../components/Features";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import ServicesComponent from "../components/Services";
 import Stories from "../components/Stories"
+import ServicesComponent from "../components/services/Services";
 
 const LandingPage = () => {
     return (

@@ -1,7 +1,7 @@
 import type { NextAuthOptions } from "next-auth";
 // import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { signIn } from "@/app/actions";
+import { signIn } from "@/app/actions/auth";
 import { JWT } from "next-auth/jwt";
 
 const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET;
@@ -49,13 +49,12 @@ export const options: NextAuthOptions = {
     async session({ session, token }) {
       if (token) {
         if (session.user) {
+          session.user.id = token.id as string;
           session.user.email = token.email!;
           session.user.name = token.name!;
           session.user.role = token.role;
         }
       }
-      // Console log after potential updates (optional)
-      console.log("Updated Session => ", session);
       return session;
     },
   },

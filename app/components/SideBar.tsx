@@ -43,18 +43,19 @@ const SideBar = () => {
 
             {
                 links.map(link => (
-                    <a href={link.url} className="mt-4 py-1.5 text-sm font-medium text-slate-500 hover:text-primary-500 group cursor-pointer flex items-center">
-                        {
-                            url === link.url ?
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 stroke-orange-400 mr-4 group-hover:stroke-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    {link.logo}
-                                </svg> :
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 stroke-slate-400 mr-4 group-hover:stroke-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    {link.logo}
-                                </svg>
-                        }
-                        {link.name}
-                    </a>
+                    url === link.url ?
+                        <a href={link.url} className="mt-4 p-2 bg-primary-200 rounded-lg text-sm font-medium text-slate-500 hover:text-primary-500 group cursor-pointer flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 stroke-orange-400 mr-4 group-hover:stroke-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                {link.logo}
+                            </svg>
+                            {link.name}
+                        </a> :
+                        <a href={link.url} className="mt-4 py-1.5 text-sm font-medium text-slate-500 hover:text-primary-500 group cursor-pointer flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 stroke-slate-400 mr-4 group-hover:stroke-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                {link.logo}
+                            </svg>
+                            {link.name}
+                        </a>
                 ))
             }
         </div>
