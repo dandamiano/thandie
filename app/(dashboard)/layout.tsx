@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/app/components/Nav'
+import Navbar from '@/app/components/Nav/NavComponent'
 import AuthProvider from '@/app/context/AuthProvider'
 import SideBar from '@/app/components/SideBar'
 const inter = Inter({ subsets: ['latin'] })
@@ -28,7 +28,9 @@ export default function RootLayout({
                 {/*  body */}
                 <div className="h-full flex justify-between mt-20">
                   <SideBar />
-                  {children}
+                  <div className="w-full h-full min-h-screen py-10  px-6">
+                    {children}
+                  </div>
                 </div>
               </div>
             </div>

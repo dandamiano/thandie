@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 // Components
 import ErrorModal from "../../components/ErrorModal";
 import SuccessModal from "../../components/SuccessModal";
-import { signUp } from "../../actions";
+import { signUp } from "../../actions/auth";
 
 const Signup = () => {
     const [errModalStatus, seterrModalStatus] = useState(false);

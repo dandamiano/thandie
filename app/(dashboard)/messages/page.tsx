@@ -1,6 +1,6 @@
 "use client"
 
-import MessageBox from "@/app/components/MessageBox";
+import MessageBox from "@/app/components/MessageBox/MessageBox";
 
 const Messages = () => {
     return (
