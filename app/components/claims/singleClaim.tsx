@@ -1,6 +1,9 @@
 "use client"
 
 import { updateClaim } from "@/app/actions/claims";
+import { useState } from "react";
+import SucessModal from "../SuccessModal";
+import { useRouter } from "next/navigation";
 
 type claimProps = {
     _id: string;
@@ -16,15 +19,23 @@ type claimProps = {
 }
 
 const SingleClaim = ({ claim }: { claim: claimProps }) => {
+    const [showModal, setShowModal] = useState(false);
+    const [modalMsg, setModalMsg] = useState('');
+    const router = useRouter();
 
-    console.log("Claim => ", claim)
     const handleSubmit = async (status: string) => {
-        console.log(
-            `Claim => ${claim._id}`, `Stauts => ${status}`
-        )
         const res = await updateClaim(claim._id, status)
-        console.log(res)
+        if (res) {
+            setModalMsg(res.message)
+            setShowModal(true)
+        }
     }
+
+    const handleClose = () => {
+        setShowModal(false)
+        router.push('/admin/claims')
+    }
+
     return (
         <div className="shadow-ld shadow-gray-300 rounded-lg shadow-md overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-200">
@@ -70,6 +81,13 @@ const SingleClaim = ({ claim }: { claim: claimProps }) => {
                     Reject
                 </button>
             </div>
+            <SucessModal
+                message={modalMsg}
+                title={"Update Success!"}
+                isOpen={showModal}
+                onClose={() => { handleClose() }}
+                url={''}
+            />
         </div>
     );
 }

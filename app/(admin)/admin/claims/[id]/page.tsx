@@ -23,7 +23,6 @@ const FetchSingleClaim = async ({ params }: paramProps) => {
     const id = params.id;
     const res = await getSingleClaim(id);
     const claim: claimProps = await res.claimsData[0];
-    console.log("User => ", claim)
     return (
         <SingleClaim claim={claim} />
     );

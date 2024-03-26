@@ -1,39 +1,15 @@
 "use client"
 import { PaymentsChart } from "@/app/components/Charts/PaymentsChart";
 
-const paymentsData = {
-    data: [
-        {
-            date: 'Jan',
-            'Payments (Kwacha)': 45000,
-        },
-        {
-            date: 'Feb',
-            'Payments (Kwacha)': 80000,
-        },
-        {
-            date: 'Mar',
-            'Payments (Kwacha)': 80000,
-        },
-        {
-            date: 'Apr',
-            'Payments (Kwacha)': 45000,
-        },
-        {
-            date: 'May',
-            'Payments (Kwacha)': 45000,
-        },
-        {
-            date: 'Jun',
-            'Payments (Kwacha)': 80000,
-        },
-    ],
-    categories: ['Payments (Kwacha)']
-}
+type paymentsType = {
+    date: string; claim: string; subscription: string
+}[]
 
-const PaymentsGraph = () => {
+
+const PaymentsGraph = ({ payments }: { payments: paymentsType }) => {
+
     return (
-        <PaymentsChart chartdata={paymentsData} />
+        <PaymentsChart chartdata={payments} />
     );
 }
 

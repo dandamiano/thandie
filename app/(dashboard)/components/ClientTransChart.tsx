@@ -2,6 +2,10 @@
 import { TransactionsChart } from "@/app/components/Charts/TransactionsChart";
 
 
+type transType = {
+    date: string; claim: string; subscription: string
+}[]
+
 const transactionsData = {
     data: [
         {
@@ -35,10 +39,9 @@ const transactionsData = {
             'Subscriptions': 5
         },
     ],
-    categories: ['Claims', 'Subscriptions']
 }
-const ClientTransChart = () => {
-    return (<TransactionsChart chartdata={transactionsData} />);
+const ClientTransChart = ({ transactions }: { transactions: transType }) => {
+    return (<TransactionsChart chartdata={transactions} />);
 }
 
 export default ClientTransChart;

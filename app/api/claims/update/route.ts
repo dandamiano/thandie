@@ -1,7 +1,9 @@
 // api/claims/new
 import dbConnect from "@/lib/db";
 import Claim from "@/models/Claim";
+import Notification from "@/models/Notification";
 import { NextResponse } from "next/server";
+export const dynamic = "force-dynamic";
 
 export async function PATCH(req: Request) {
   try {
@@ -10,24 +12,14 @@ export async function PATCH(req: Request) {
     const status = searchParams.get("status");
     const claimId = searchParams.get("claim");
 
-    console.log("Status => ", status, "Claim => ", claimId);
-
     const updateData = { $set: { status: status } };
 
-    const claim = await Claim.findById(claimId);
+    const updatedClaim = await Claim.findOneAndUpdate(
+      { _id: claimId },
+      updateData
+    );
 
-    if (!claim) {
-      return NextResponse.json(
-        {
-          message: `Claim with ID "${claimId}" not found`,
-        },
-        { status: 404 }
-      );
-    }
-
-    const updatedClaim = await claim.updateOne({ _id: claimId }, updateData);
-
-    if (updatedClaim.modifiedCount <= 0) {
+    if (!updatedClaim) {
       return NextResponse.json(
         {
           message: `Failed to update claim with ID "${claimId}"`,
@@ -36,9 +28,22 @@ export async function PATCH(req: Request) {
       );
     }
 
+    console.log("Updated Claim => ", updatedClaim);
+    const user = updatedClaim.user;
+    const title = `Claim ${status}`;
+    const description = `Your claim ${updatedClaim.title} has been ${status}.`;
+
+    const notification = new Notification({
+      user,
+      title,
+      description,
+    });
+    const newNotification = await notification.save();
+    console.log("New Notification => ", newNotification);
+
     return NextResponse.json(
       {
-        message: `Claim updated successfully`,
+        message: `Claim ${status} successfully`,
       },
       { status: 200 }
     );

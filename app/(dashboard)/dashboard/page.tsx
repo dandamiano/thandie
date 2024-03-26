@@ -1,6 +1,6 @@
 import GridStats from "@/app/components/Stats/TopStats";
 import { BsArchive, BsCreditCard, BsFolder2Open } from "react-icons/bs";
-import { getStats } from "@/app/actions/action";
+import { getPaymentsData, getStats, getTransData } from "@/app/actions/action";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
 import ClientTransChart from "../components/ClientTransChart";
@@ -19,12 +19,16 @@ async function Dashboard() {
     if (!session) { return }
     const res: statsType = await getStats(session.user.id)
     const stats = res.stats;
-    console.log(stats)
+
+    const transactions = await getTransData(session.user.id)
+    const payments = await getPaymentsData(session.user.id)
+
     const statsData = [
         { link: '/claims', label: 'Claims', value: stats.claims, icon: <BsArchive color={'orange'} size={50} />, positive: false },
         { link: '/subscriptions', label: 'Subscriptions', value: stats.subscriptions, icon: <BsFolder2Open color={'orange'} size={50} />, positive: false },
         { link: '', label: 'Payments', value: `K${stats.payments}`, icon: <BsCreditCard color={'orange'} size={50} />, positive: false },
     ]
+    console.log("Payments => ", payments)
 
     return (
         <div className="w-full h-full flex flex-col space-y-10">
@@ -35,10 +39,10 @@ async function Dashboard() {
                 ))}
             </div>
             <h1 className="text-xl text-primary-500">Your Transactions</h1>
-            <ClientTransChart />
+            <ClientTransChart transactions={transactions.result} />
 
             <h1 className="text-xl text-primary-500">Your Payments</h1>
-            <PaymentsGraph />
+            <PaymentsGraph payments={payments.result} />
 
         </div>
     )

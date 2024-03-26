@@ -4,6 +4,7 @@ import Service from "@/models/Service";
 import Claim from "@/models/Claim";
 import User from "@/models/User";
 import { NextResponse } from "next/server";
+export const dynamic = "force-dynamic";
 
 type claimProps = {
   _id: string;
